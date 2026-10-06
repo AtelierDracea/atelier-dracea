@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atelier Dracéa – Communication et stratégie digitale à Draguignan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2EEE6; --ink:#1F211D; --muted:#5E5D55; --card:#FFFFFF; --line:#DDD2BC;
+  --green:#25352D; --gold:#C4A35F; --on-green:#F2EEE6;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#141E19;--ink:#F2EEE6;--muted:#B9B6A8;--card:#1E2C25;--line:#34453B;}
+}
+:root[data-theme="dark"]{--bg:#141E19;--ink:#F2EEE6;--muted:#B9B6A8;--card:#1E2C25;--line:#34453B;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;margin:0;line-height:1.05;font-weight:500}
+h1 b,h2 b{font-weight:700}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.dark{background:var(--green);color:var(--on-green)}
+.dark .gold,.gold{color:var(--gold)}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
+.mono{font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold);line-height:1}
+.brand span{font-size:15px;letter-spacing:.04em}
+nav a{margin-left:24px;text-decoration:none;font-size:15px;opacity:.85}
+nav a:hover{opacity:1;color:var(--gold)}
+.hero{padding:72px 0 96px}
+.hero h1{font-size:clamp(46px,8.5vw,96px);letter-spacing:-.01em;max-width:11ch}
+.hero h1 b{color:var(--gold);display:block}
+.hero p{max-width:50ch;font-size:20px;margin:28px 0 36px;opacity:.9}
+.btn{display:inline-block;background:var(--gold);color:#1F211D;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15px}
+.btn:hover{filter:brightness(1.08)}
+section{padding:80px 0}
+h2{font-size:clamp(34px,5.5vw,58px);margin-bottom:20px}
+.lead{max-width:58ch;color:var(--muted);margin:0 0 44px;font-size:18px}
+.rows{max-width:760px}
+.row{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:200px 1fr;gap:16px}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row h3{font-size:26px;color:var(--gold);font-weight:700}
+.row p{margin:0}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 28px;position:relative}
+.plan h3{font-size:20px;font-family:"Instrument Sans",sans-serif;font-weight:600;margin-bottom:14px}
+.price{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:54px;line-height:1;margin-bottom:20px}
+.plan ul{list-style:none;margin:0;padding:20px 0 0;border-top:2px solid var(--gold);display:grid;gap:10px}
+.plan.sig{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.badge{position:absolute;top:-14px;left:24px;background:var(--gold);color:#1F211D;font-size:13px;font-weight:600;padding:5px 14px;border-radius:999px}
+.note{color:var(--muted);font-size:14px;margin-top:22px}
+.targets{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.target{background:var(--card);border-radius:22px;padding:30px 28px;border-bottom:4px solid var(--gold)}
+.target h3{font-size:28px;margin-bottom:8px;font-weight:700}
+.target p{margin:0;color:var(--muted)}
+.closing{padding:96px 0}
+.closing h2{font-size:clamp(38px,6vw,68px)}
+.closing p{max-width:52ch;opacity:.9;margin:0 0 32px}
+footer{padding:28px 0 36px;font-size:14px;border-top:1px solid rgba(242,238,230,.2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{opacity:.85}
+[hidden]{display:none!important}
+a.plan{display:block;text-decoration:none;color:inherit;transition:transform .2s}
+a.plan:hover{transform:translateY(-4px)}
+.more{display:inline-block;margin-top:22px;font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--gold)}
+.sub{padding-top:56px;padding-bottom:88px}
+.sub h1{font-size:clamp(42px,7vw,76px);margin-bottom:12px;outline:none}
+.sub .price small{font-family:"Instrument Sans",sans-serif;font-size:15px;font-weight:400;color:var(--muted)}
+.crumb{margin:0 0 28px}.crumb a{color:var(--muted)}
+.sub h2{font-size:clamp(28px,4vw,40px);margin:48px 0 12px}
+.others{margin-top:36px;color:var(--muted)}.others a{margin-right:18px}
+form{max-width:680px;display:grid;gap:18px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:6px;font-weight:500;font-size:15px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+textarea{min-height:140px;resize:vertical}
+button.btn{border:0;cursor:pointer;font-family:inherit;justify-self:start}
+.sent{max-width:680px;background:var(--card);border-left:4px solid var(--gold);padding:18px 22px;border-radius:12px;margin-top:24px}
+mark{background:rgba(196,163,95,.38);color:inherit;padding:1px 5px;border-radius:4px}
+.legal p,.legal li{max-width:70ch}.legal h2{font-size:clamp(26px,3.5vw,34px);margin:40px 0 10px}
+@media(max-width:640px){.fgrid{grid-template-columns:1fr}}
+@media(max-width:640px){nav{display:none}.row{grid-template-columns:1fr;gap:4px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="dark">
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#"><span class="mono" aria-hidden="true">AD</span><span>Atelier Dracéa</span></a>
+      <nav><a href="#constat">Notre approche</a><a href="#formules">Formules</a><a href="#pour-qui">Pour qui</a><a href="#/contact">Contact</a></nav>
+    </header>
+    <div class="hero" id="home-hero">
+      <h1>Votre entreprise <b>mérite d'être vue.</b></h1>
+      <p>Une présence digitale pensée comme une vraie marque : locale, élégante et orientée résultats.</p>
+      <a class="btn" href="#/contact/audit">Audit Dracéa · 290 € HT</a>
+    </div>
+  </div>
+</div>
+
+<main id="view-home">
+  <section id="constat">
+    <div class="wrap">
+      <h2>Être présent <b>ne suffit plus.</b></h2>
+      <p class="lead">Aujourd'hui, un client découvre votre entreprise sur Google, regarde vos avis, parcourt vos réseaux, puis décide s'il vous contacte. Chaque détail compte.</p>
+      <div class="rows">
+        <div class="row"><h3>Être trouvé</h3><p>Google, référencement local et informations fiables.</p></div>
+        <div class="row"><h3>Être crédible</h3><p>Une identité cohérente, des contenus qui rassurent.</p></div>
+        <div class="row"><h3>Être choisi</h3><p>Transformer la visibilité en demandes concrètes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formules" style="padding-top:20px">
+    <div class="wrap">
+      <h2>Trois niveaux, <b>un même objectif.</b></h2>
+      <p class="lead">Des offres lisibles pour passer d'une présence minimale à une véritable stratégie d'acquisition locale.</p>
+      <div class="plans">
+        <a class="plan" href="#/formule/essentiel"><h3>Essentiel</h3><div class="price">490 €</div>
+          <ul><li>Google Business</li><li>1 réseau social</li><li>8 contenus par mois</li><li>Avis et reporting</li></ul><span class="more">Voir le détail</span></a>
+        <a class="plan sig" href="#/formule/signature"><span class="badge">Recommandé</span><h3 class="gold">Signature</h3><div class="price">790 €</div>
+          <ul><li>Google Business</li><li>Instagram + Facebook</li><li>12 contenus + 4 Reels</li><li>SEO local + reporting</li></ul><span class="more">Voir le détail</span></a>
+        <a class="plan" href="#/formule/prestige"><h3>Prestige</h3><div class="price">1 190 €</div>
+          <ul><li>Multi-réseaux</li><li>16 à 20 contenus</li><li>6 Reels + stories</li><li>SEO local + stratégie</li></ul><span class="more">Voir le détail</span></a>
+      </div>
+      <p class="note">Tarifs indicatifs HT, hors budget publicitaire. Engagement et périmètre définis au devis.</p>
+    </div>
+  </section>
+
+  <section id="pour-qui" style="padding-top:20px">
+    <div class="wrap">
+      <h2>Les entreprises locales <b>qui veulent être choisies.</b></h2>
+      <p class="lead">Artisans, commerces, immobilier, beauté, tourisme, restauration, professions de services : votre métier est local, votre visibilité peut travailler 24h/24.</p>
+      <div class="targets">
+        <div class="target"><h3>BTP et artisans</h3><p>Être trouvé au moment où le besoin apparaît.</p></div>
+        <div class="target"><h3>Commerce et restauration</h3><p>Donner envie de venir, puis de revenir.</p></div>
+        <div class="target"><h3>Services et immobilier</h3><p>Rassurer avant même le premier contact.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="dark closing" id="home-closing">
+  <div class="wrap">
+    <h2>L'atelier n'est <b class="gold">pas un lieu.</b><br>C'est votre présence digitale.</h2>
+    <p>Atelier Dracéa accompagne les entreprises de Draguignan et de la Dracénie là où leurs clients les cherchent : Google, les réseaux sociaux, leur site internet et, surtout, dans l'esprit de leurs futurs clients.</p>
+    <a class="btn" href="#/contact/audit">Demander votre Audit Dracéa · 290 € HT</a>
+  </div>
+</div>
+<main id="view-formule" hidden></main>
+<main id="view-contact" hidden><div class="wrap sub">
+<h1 tabindex="-1">Parlons de votre projet</h1>
+<p class="lead">Dites-nous en quelques lignes ce dont vous avez besoin. Nous reviendrons vers vous.</p>
+<form id="contact-form">
+<div class="fgrid">
+<label>Nom et prénom<input name="nom" autocomplete="name" required></label>
+<label>Entreprise<input name="entreprise" autocomplete="organization"></label>
+<label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+<label>Téléphone<input name="tel" type="tel" autocomplete="tel"></label>
+</div>
+<label>Votre demande<select id="f-formule" name="formule">
+<option value="audit">Audit Dracéa · 290 € HT</option>
+<option value="essentiel">Formule Essentiel · 490 €</option>
+<option value="signature">Formule Signature · 790 €</option>
+<option value="prestige">Formule Prestige · 1 190 €</option>
+<option value="autre">Je ne sais pas encore</option>
+</select></label>
+<label>Message<textarea name="message" placeholder="Votre activité, votre ville, ce que vous attendez…"></textarea></label>
+<button class="btn" type="submit">Envoyer ma demande</button>
+<p class="note" style="margin:0">En envoyant, votre messagerie s'ouvre avec le message prêt à partir.</p>
+</form>
+<div class="sent" id="sent" hidden>Votre messagerie devrait s'ouvrir. Sinon, <a id="mail-link" href="#">cliquez ici pour ouvrir le message</a> ou écrivez-nous à contact@atelier-dracea.fr.</div>
+</div></main>
+<main id="view-legal" hidden><div class="wrap sub legal">
+<p class="crumb"><a href="#/">← Retour à l'accueil</a></p>
+<h1 tabindex="-1">Mentions légales</h1>
+<p class="note">Les passages surlignés sont à compléter après l'immatriculation de l'entreprise.</p>
+<h2>Éditeur du site</h2>
+<p>Florian Montangon, entrepreneur individuel (micro-entrepreneur), exerçant sous le nom commercial « Atelier Dracéa ».<br>
+Adresse : 97 boulevard Colonel Michel Lafourcade, 83300 Draguignan<br>
+SIRET : <mark>[à compléter]</mark><br>
+Téléphone : <mark>[à compléter]</mark><br>
+E-mail : <mark>contact@atelier-dracea.fr</mark><br>
+<mark>[Mention de TVA à ajouter selon votre régime]</mark></p>
+<h2>Directeur de la publication</h2>
+<p>Florian Montangon.</p>
+<h2>Hébergement</h2>
+<p><mark>[Nom, adresse et téléphone de l'hébergeur, à renseigner selon l'hébergement définitif du site]</mark></p>
+<h2>Propriété intellectuelle</h2>
+<p>Les textes, logos, visuels et éléments graphiques de ce site sont la propriété d'Atelier Dracéa, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.</p>
+<h2>Données personnelles</h2>
+<p>Le responsable du traitement est Florian Montangon, à l'adresse indiquée ci-dessus. Les informations saisies dans le formulaire de contact (nom, entreprise, e-mail, téléphone, message) servent uniquement à répondre à votre demande et à vous proposer un devis. Elles ne sont ni vendues ni cédées. Elles sont conservées le temps nécessaire au traitement de votre demande, puis <mark>[durée de conservation, par exemple 3 ans après le dernier contact]</mark>.</p>
+<p>Vous pouvez demander l'accès, la rectification, la suppression de vos données, ou vous opposer à leur traitement, en écrivant à contact@atelier-dracea.fr. Vous pouvez aussi adresser une réclamation à la CNIL (cnil.fr).</p>
+<h2>Polices de caractères</h2>
+<p>Ce site utilise les polices Google Fonts, chargées depuis les serveurs de Google, qui reçoivent donc l'adresse IP du visiteur lors de l'affichage des pages.</p>
+<h2>Responsabilité et liens externes</h2>
+<p>Les informations de ce site, notamment les tarifs, sont données à titre indicatif et peuvent évoluer. Atelier Dracéa ne peut être tenu responsable du contenu des sites externes vers lesquels ce site pourrait renvoyer.</p>
+</div></main>
+<div class="dark"><div class="wrap"><footer><span>Draguignan · Dracénie · Var</span><span>© 2026 Atelier Dracéa · <a href="#/mentions-legales">Mentions légales</a></span></footer></div></div>
+<script>
+const MAIL="contact@atelier-dracea.fr",$=id=>document.getElementById(id);
+const F={
+essentiel:{n:"Essentiel",p:"490 €",t:"Poser des bases solides pour être trouvé et rester présent.",
+ inc:[["Google Business","Votre fiche est créée ou mise à jour : coordonnées, horaires, photos, description. C'est elle qui s'affiche quand on vous cherche sur Google et Maps."],["1 réseau social","Nous choisissons avec vous le réseau le plus utile pour vos clients."],["8 contenus par mois","Des publications préparées et planifiées pour rester visible régulièrement."],["Avis et reporting","Un suivi de vos avis clients et un bilan de ce qui fonctionne."]],
+ pour:"Les artisans et petits commerces qui veulent une présence propre et à jour, sans se disperser."},
+signature:{n:"Signature",p:"790 €",t:"La formule recommandée : plus de présence, plus de contenus, un meilleur référencement local.",
+ inc:[["Google Business","Une fiche complète et entretenue, pour être trouvé au moment où le besoin apparaît."],["Instagram + Facebook","Une présence cohérente sur les deux réseaux où vos clients locaux vous cherchent."],["12 contenus + 4 Reels","Des publications régulières, complétées par de courtes vidéos pour gagner en visibilité."],["SEO local + reporting","Un travail sur les recherches de votre zone, et un bilan pour mesurer les résultats."]],
+ pour:"Les entreprises locales qui veulent attirer davantage de clients avec une présence travaillée."},
+prestige:{n:"Prestige",p:"1 190 €",t:"Une véritable stratégie d'acquisition locale, sur l'ensemble de vos canaux.",
+ inc:[["Multi-réseaux","Une présence coordonnée sur plusieurs réseaux, avec un même fil conducteur."],["16 à 20 contenus","Un rythme de publication soutenu, pour rester dans l'esprit de vos futurs clients."],["6 Reels + stories","Des formats courts et vivants pour montrer votre activité au quotidien."],["SEO local + stratégie","Un référencement local suivi, et une stratégie pensée avec vous pour transformer la visibilité en demandes."]],
+ pour:"Les entreprises qui veulent faire de leur présence digitale un vrai levier de développement local."}};
+function formuleHTML(k){const f=F[k];
+const o=Object.keys(F).filter(x=>x!==k).map(x=>`<a href="#/formule/${x}">${F[x].n} · ${F[x].p}</a>`).join("");
+return `<div class="wrap sub"><p class="crumb"><a href="#formules">← Toutes les formules</a></p>
+<h1 tabindex="-1">${f.n}</h1><div class="price">${f.p} <small>HT, tarif indicatif</small></div>
+<p class="lead">${f.t}</p>
+<div class="rows">${f.inc.map(i=>`<div class="row"><h3>${i[0]}</h3><p>${i[1]}</p></div>`).join("")}</div>
+<h2>Pour qui ?</h2><p class="lead" style="margin-bottom:28px">${f.pour}</p>
+<a class="btn" href="#/contact/${k}">Choisir cette formule</a>
+<p class="note">Hors budget publicitaire. Engagement et périmètre définis au devis.</p>
+<p class="others">Comparer avec : ${o}</p></div>`}
+function route(){
+const h=location.hash,parts=h.replace(/^#\/?/,"").split("/");
+let view="home",anchor="";
+if(h.startsWith("#/formule/")&&F[parts[1]]){view="formule";$("view-formule").innerHTML=formuleHTML(parts[1]);document.title=F[parts[1]].n+" – Atelier Dracéa"}
+else if(h==="#/mentions-legales"){view="legal";document.title="Mentions légales – Atelier Dracéa"}
+else if(h.startsWith("#/contact")){view="contact";if(["audit","autre",...Object.keys(F)].includes(parts[1]))$("f-formule").value=parts[1];document.title="Contact – Atelier Dracéa"}
+else{anchor=h.startsWith("#/")?"":h.slice(1);document.title="Atelier Dracéa – Communication et stratégie digitale à Draguignan"}
+const home=view==="home";
+["view-home","home-hero","home-closing"].forEach(i=>$(i).hidden=!home);
+$("view-formule").hidden=view!=="formule";$("view-legal").hidden=view!=="legal";$("view-contact").hidden=view!=="contact";
+const el=anchor&&$(anchor);
+if(el)el.scrollIntoView();else window.scrollTo(0,0);
+if(!home){const t=document.querySelector("#view-"+view+" h1");if(t)t.focus({preventScroll:true})}}
+$("contact-form").addEventListener("submit",e=>{e.preventDefault();
+const d=new FormData(e.target),s=$("f-formule"),l=s.options[s.selectedIndex].text;
+const body=`Nom : ${d.get("nom")}\nEntreprise : ${d.get("entreprise")||"-"}\nE-mail : ${d.get("email")}\nTéléphone : ${d.get("tel")||"-"}\nSujet : ${l}\n\n${d.get("message")||""}`;
+const u=`mailto:${MAIL}?subject=${encodeURIComponent("Demande – "+l)}&body=${encodeURIComponent(body)}`;
+$("mail-link").href=u;$("sent").hidden=false;location.href=u});
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
